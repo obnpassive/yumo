@@ -1,0 +1,209 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+header {
+    background-color: #ebebeb;
+    color: #5e30eb;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.container {
+    display: flex;
+    margin-top: 60px; /* To account for the header height */
+}
+
+nav {
+    width: 200px;
+    background-color: #ebebeb;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60px; /* Height of the header */
+    bottom: 0;
+    overflow-y: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 1rem;
+}
+
+nav ul li a {
+    color: #232323;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    margin-left: 200px; /* Width of the nav */
+    overflow-y: auto;
+}
+
+.post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    max-width: 600px; /* Adjust as needed for post width on PC */
+    margin: 0 auto;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.post-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.username .fa-check-circle {
+    color: #1DA1F2;
+    margin-left: 5px; /* Move the verification sign to the right */
+}
+
+.notes {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.post-content img,
+.post-content video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.video-container video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    max-width: 720px;
+    max-height: 1280px; /* Set maximum height for videos */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    margin-bottom: 1rem; /* Add some spacing between content and notes */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.post-actions {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 0 8px 8px;
+    margin-top: -1px; /* To slightly overlap with the post below */
+}
+
+.post-actions button {
+    background-color: transparent;
+    border: none;
+    color: #1DA1F2;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.post-actions button:hover {
+    text-decoration: underline;
+}
+
+/* Overlay for image pop-up */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay.active {
+    display: block;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
